@@ -51,20 +51,18 @@ def calibration(sample_img):
     # un-distort
     dst = cv2.undistort(img, mtx, dist_coe, new_camera_mtx)
 
-    # plt.imshow(dst)
-    # plt.show()
     # crop the image
     x, y, w, h = roi
     return dst[y:y + h, x:x + w]
 
 
 # The paths where the sample images are and where the calibrated images go
-sample_path = '/home/hora/PycharmProjects/calibration/pictures/'
-cali_path = '/home/hora/PycharmProjects/calibration/calibrated/'
+sample_path = '/home/hora/PycharmProjects/calibration_undistortion/calibration/pictures/'
+cali_path = '/home/hora/PycharmProjects/calibration_undistortion/calibration/calibrated/'
 
 # Import images
 
-dist_images = glob.glob(os.path.join(sample_path, '*.jpg'))
+dist_images = sorted(glob.glob(os.path.join(sample_path, '*.jpg')))
 img_index = 1
 
 for sample in dist_images:
@@ -79,4 +77,3 @@ for sample in dist_images:
 
     k = cv2.waitKey(0)
     cv2.destroyAllWindows()
-
