@@ -3,6 +3,8 @@
     <words>
       <w>cbcol</w>
       <w>cbrow</w>
+      <w>coeff</w>
+      <w>distor</w>
       <w>objp</w>
       <w>rvecs</w>
       <w>tvecs</w>
